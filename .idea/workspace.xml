@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4cdf87e0-19ad-4e63-983c-aa5cfb2fefcb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/Characters.jsx" afterPath="$PROJECT_DIR$/imports/ui/Characters.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -64,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Characters.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Characters.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/Characters.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+            <state relative-caret-position="119">
+              <caret line="7" column="127" lean-forward="false" selection-start-line="7" selection-start-column="127" selection-end-line="7" selection-end-column="127" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -76,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Characters.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Characters.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/css/Characters.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -126,8 +127,8 @@
         <option value="$PROJECT_DIR$/imports/ui/css/Comics.css" />
         <option value="$PROJECT_DIR$/imports/ui/Comics.jsx" />
         <option value="$PROJECT_DIR$/imports/ui/css/App.css" />
-        <option value="$PROJECT_DIR$/imports/ui/Characters.jsx" />
         <option value="$PROJECT_DIR$/imports/ui/css/Characters.css" />
+        <option value="$PROJECT_DIR$/imports/ui/Characters.jsx" />
       </list>
     </option>
   </component>
@@ -344,12 +345,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512759339371</updated>
-      <workItem from="1512759341464" duration="27659000" />
+      <workItem from="1512759341464" duration="28342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27659000" />
+    <option name="totallyTimeSpent" value="28342000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -516,24 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/Card.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/List.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -566,6 +549,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/css/Characters.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/List.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -576,21 +575,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/Characters.jsx">
+    <entry file="file://$PROJECT_DIR$/imports/ui/Card.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        <state relative-caret-position="246">
+          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="49" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/css/Characters.css">
+    <entry file="file://$PROJECT_DIR$/imports/ui/Characters.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="8" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="119">
+          <caret line="7" column="127" lean-forward="false" selection-start-line="7" selection-start-column="127" selection-end-line="7" selection-end-column="127" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

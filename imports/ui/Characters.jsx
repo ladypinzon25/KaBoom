@@ -5,7 +5,7 @@ class Characters extends Component {
     render() {
         return (
             <div className="characters">
-                <div className="item1"><img src="./img/verde.png"/></div>
+                <div className="item1"><img src="http://marvel.dl.llnw.net/wdig/marvel/u/prod/marvel/i/mg/9/20/53176ebd40ad7/"/></div>
                 <div className="item2"><img src="./img/amarillo.png"/></div>
                 <div className="item3"><img src="./img/azul.png"/></div>
                 <div className="item4"><img src="./img/morado.png"/></div>
