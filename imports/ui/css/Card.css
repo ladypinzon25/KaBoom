@@ -1,0 +1,42 @@
+.Card {
+    /*background: #3498db;*/
+    /*width: 180px;*/
+    /*padding: 4px 0;*/
+    width: 20vw;
+    display: inline;
+    /*-webkit-transform: translateX(-50%) translateY(-50%);*/
+    /*transform: translateX(-50%) translateY(-50%);*/
+    /*border-radius: 3px;*/
+
+}
+.Card img{
+    border-radius: 3px;
+    border: solid;
+    border-color: #1f1f14;
+}
+.Card p {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFF;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.Card:hover {
+    cursor: pointer;
+}
+.Card img{
+    max-width: 100%;
+    /*max-height: 50px;*/
+}
+.options {
+
+    text-align: center;
+    color: 	 #1f1f14;
+    font-family: 'Indie Flower', cursive;
+}
+.Card a{
+    text-decoration: none !important;
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee|Indie+Flower');
+body {
+    background-color: #cc0000;
+    /*overflow-y: hidden;*/
+}
+.tittle h1{
+    font-family: 'Bungee', cursive;
+    color: white;
+    margin-top: 8vh;
+    text-align: center;
+    font-size: 5vw;
+}
+.buttons {
+    width: 20vw;
+    position: absolute;
+    right: 7vw;
+    top: 5vh;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5vh;
+}

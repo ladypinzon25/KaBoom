@@ -1,0 +1,41 @@
+
+.animate
+{
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+    position: relative;
+    padding: 5px 30px;
+    margin: 0px 10px 10px 0px;
+    /*float: left;*/
+    border-radius: 10px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5vw;
+    color: black;
+    text-decoration: none;
+    width: 5vw;
+    /*position: fixed;*/
+    /*top: 2vh;*/
+    /*right: 5vw;*/
+    /*float: right;*/
+    cursor: pointer;
+
+
+}
+
+.blue
+{
+    background-color: white;
+    border-bottom: 5px solid #b3b3b3;
+    text-shadow: 0px -2px white;
+}
+
+.action-button:active
+{
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    border-bottom: 1px solid;
+}
