@@ -19,7 +19,7 @@ class Characters extends Component {
     }
     lookForCharacter = (e) => {
         if (e.key === 'Enter') {
-            fetch("http://gateway.marvel.com/v1/public/characters?ts=1509919620472&apikey=b1a65b4d878c2f7a79f9bb3873d98d9a&hash=2295cd61b369a99f20eccd5d933d858e&nameStartsWith=" + this.state.input)
+            fetch("http://gateway.marvel.com/v1/public/characters?ts=1509919620472&apikey=b1a65b4d878c2f7a79f9bb3873d98d9a&hash=2295cd61b369a99f20eccd5d933d858e&nameStartsWith=" + this.state.input+"&offset=100&limit=93")
                 .then(res => res.json())
                 .then((data) => {
                     const results = data.data.results;
@@ -77,7 +77,7 @@ class Characters extends Component {
         return (
             <div>
                 <div className="bar">
-                    <h1>Characters</h1>
+                    <h1>Marvel Characters</h1>
                     <span className="search-bar">
                         <input type="text" placeholder="Look for some character..."
                                onChange={(event) => this.setState({input: event.target.value})}
