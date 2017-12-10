@@ -7,7 +7,9 @@ class Characters extends Component {
         super(props);
         this.state = {
             characters: [],
-            selectedCharacter: {}
+            charactersSearched: [],
+            selectedCharacter: {},
+            input: ''
         }
     }
 
@@ -15,16 +17,50 @@ class Characters extends Component {
         this.setState({selectedCharacter: character})
         document.getElementById("mySidenav").style.width = "70vh";
     }
+    lookForCharacter = (e) => {
+        if (e.key === 'Enter') {
+            fetch("http://gateway.marvel.com/v1/public/characters?ts=1509919620472&apikey=b1a65b4d878c2f7a79f9bb3873d98d9a&hash=2295cd61b369a99f20eccd5d933d858e&nameStartsWith=" + this.state.input)
+                .then(res => res.json())
+                .then((data) => {
+                    const results = data.data.results;
+                    const charactersSearched = results.map(r => {
+                        if (!r.thumbnail.path.includes('image_not_available'))
+                            return {
+                                img: r.thumbnail.path,
+                                ext: r.thumbnail.extension,
+                                name: r.name,
+                                description: r.description,
+                                comics: r.comics.items,
+                                events: r.events.items
+                            }
+                        else
+                            return null;
+                    }).filter(r => r);
 
+                    this.setState({charactersSearched})
+                })
+
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+    }
 
     componentWillMount() {
-        fetch("http://gateway.marvel.com/v1/public/characters?ts=1509919620472&apikey=b1a65b4d878c2f7a79f9bb3873d98d9a&hash=2295cd61b369a99f20eccd5d933d858e&offset=100&limit=100")
+        fetch("http://gateway.marvel.com/v1/public/characters?ts=1509919620472&apikey=b1a65b4d878c2f7a79f9bb3873d98d9a&hash=2295cd61b369a99f20eccd5d933d858e&offset=100&limit=93")
             .then(res => res.json())
             .then((data) => {
                 const results = data.data.results;
                 const characters = results.map(r => {
                     if (!r.thumbnail.path.includes('image_not_available'))
-                        return {img: r.thumbnail.path, ext: r.thumbnail.extension, name: r.name, description: r.description, comics: r.comics.items, events: r.events.items}
+                        return {
+                            img: r.thumbnail.path,
+                            ext: r.thumbnail.extension,
+                            name: r.name,
+                            description: r.description,
+                            comics: r.comics.items,
+                            events: r.events.items
+                        }
                     else
                         return null;
                 }).filter(r => r);
@@ -40,18 +76,61 @@ class Characters extends Component {
     render() {
         return (
             <div>
-                <div className="bar"><h1>Characters</h1></div>
-                <div className="characters" style={getStyleContainer(this.state.characters.length)}>
-                    {this.state.characters.map((character, i) => {
-                        return (
-                            <div onClick={()=>this.openNav(character)} className={"item " + getClass(i)} style={getStyle(i)} key={i}>
-                                <img src={getURL(i, character.img, character.ext)}/>
-                                <div className="title"><b>{character.name}</b></div>
-                            </div>
-                        )
-                    })}
-
+                <div className="bar">
+                    <h1>Characters</h1>
+                    <span className="search-bar">
+                        <input type="text" placeholder="Look for some character..."
+                               onChange={(event) => this.setState({input: event.target.value})}
+                               onKeyPress={this.lookForCharacter}/>
+                        <div className="search-icon"></div>
+                    </span>
                 </div>
+                {this.state.charactersSearched.length > 0 ?
+                    <div className="charactersWrapper">
+                        <p className="results"><b>Results for: {this.state.input}</b></p>
+                        <div className="characters" style={getStyleContainer(this.state.charactersSearched.length)}>
+                            {this.state.charactersSearched.map((character, i) => {
+                                return (
+                                    <div onClick={() => this.openNav(character)} className={"item " + getClass(i)}
+                                         style={getStyle(i)} key={i}>
+                                        <img src={getURL(i, character.img, character.ext)}/>
+                                        <div className="title"><b>{character.name}</b></div>
+                                    </div>
+                                )
+                            })}
+
+                        </div>
+                        <p className="results"><b>Todos</b></p>
+                        <div className="characters" style={getStyleContainer(this.state.characters.length)}>
+                            {this.state.characters.map((character, i) => {
+                                return (
+                                    <div onClick={() => this.openNav(character)} className={"item " + getClass(i)}
+                                         style={getStyle(i)} key={i}>
+                                        <img src={getURL(i, character.img, character.ext)}/>
+                                        <div className="title"><b>{character.name}</b></div>
+                                    </div>
+                                )
+                            })}
+
+                        </div>
+                    </div>
+                    :
+                    <div className="charactersWrapper">
+                        <p className="results"><b>Todos</b></p>
+                        <div className="characters" style={getStyleContainer(this.state.characters.length)}>
+                            {this.state.characters.map((character, i) => {
+                                return (
+                                    <div onClick={() => this.openNav(character)} className={"item " + getClass(i)}
+                                         style={getStyle(i)} key={i}>
+                                        <img src={getURL(i, character.img, character.ext)}/>
+                                        <div className="title"><b>{character.name}</b></div>
+                                    </div>
+                                )
+                            })}
+
+                        </div>
+                    </div>
+                }
                 <Drawer character={this.state.selectedCharacter}/>
             </div>
         );
