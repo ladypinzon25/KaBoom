@@ -50,16 +50,27 @@ body {
 .description {
   color: white;
   font-family: 'Roboto', sans-serif;
-  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .imageDes {
   text-align: center;
 }
-.descriptionColor, .comicColor {
+.comicColor, .eventColor {
+   padding-left: 10px;
+   padding-right: 10px;
+ }
+
+.descriptionColor, .comicColor, .eventColor {
   color: #FCF03F;
 }
-.comicsName {
-
+.comicsName, .eventsName {
+  padding-left: 10px;
+  padding-right: 10px;
   color: white;
   font-family: 'Roboto', sans-serif;
+}
+.eventColor {
+
+  margin-top: 10px;
 }

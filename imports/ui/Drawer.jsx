@@ -22,13 +22,26 @@ class Drawer extends Component {
                         ''}
                 </div>
                 <div>
-                    {this.props.character && this.props.character.comics && this.props.character.comics.length>0 ?
+                    {this.props.character && this.props.character.comics && this.props.character.comics.length > 0 ?
                         <div>
                             <div className="comicColor"><b>Comics:</b></div>
                             {this.props.character.comics.map((comic, i) => {
                                 return (
                                     <div key={i} className="comicsName">
                                         <b> * {comic.name} </b>
+                                    </div>
+                                )
+                            })}</div>
+                        :
+                        ''}</div>
+                <div>
+                    {this.props.character && this.props.character.events && this.props.character.events.length > 0 ?
+                        <div>
+                            <div className="eventColor"><b>Events:</b></div>
+                            {this.props.character.events.map((event, i) => {
+                                return (
+                                    <div key={i} className="eventsName">
+                                        <b> * {event.name} </b>
                                     </div>
                                 )
                             })}</div>
