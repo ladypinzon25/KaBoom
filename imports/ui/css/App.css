@@ -28,3 +28,21 @@ body {
     justify-content: space-around;
     margin-top: 5vh;
 }
+
+.ActiveButton
+{
+  border:1px solid #fff311;
+  background-color: #fff311;
+  margin: 2px;
+  cursor: pointer;
+  color: #141414;
+}
+
+.InactiveButton
+{
+  border:1px solid #fff311;
+  background-color: transparent;
+  margin: 2px;
+  cursor: default;
+  color: #141414;
+}

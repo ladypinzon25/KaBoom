@@ -1,0 +1,11 @@
+#HeroIcon
+{
+  background-color: #CCC;
+  margin: 2px;
+  cursor: pointer;
+}
+
+#HeroIcon.selected
+{
+  border: 3px solid blue;
+}

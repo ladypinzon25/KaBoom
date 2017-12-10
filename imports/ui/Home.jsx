@@ -1,16 +1,20 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import "./css/HomeButton.css";
 import HomeButton from './HomeButton.jsx';
 import Card from './Card.jsx';
 
 class Home extends Component {
 
+  SignIn() {
+    this.props.signIn();
+  }
     render() {
         return (
             <div className="app">
                 <div className="buttons">
-                    <HomeButton text="Sign in"></HomeButton>
-                    <HomeButton text="Sign up"></HomeButton>
+                    <HomeButton text={this.props.user?"Sign out":"Sign in"}
+                      action={() => this.SignIn()}></HomeButton>
                 </div>
                 <div className="tittle">
                     <h1>KaBoom</h1>
@@ -24,4 +28,10 @@ class Home extends Component {
         )
     }
 }
+
+Home.propTypes = {
+  signIn: PropTypes.func.isRequired,
+  user: PropTypes.object
+}
+
 export default Home;
