@@ -24,7 +24,7 @@ class Characters extends Component {
                 const results = data.data.results;
                 const characters = results.map(r => {
                     if (!r.thumbnail.path.includes('image_not_available'))
-                        return {img: r.thumbnail.path, ext: r.thumbnail.extension, name: r.name, description: r.description}
+                        return {img: r.thumbnail.path, ext: r.thumbnail.extension, name: r.name, description: r.description, comics: r.comics.items}
                     else
                         return null;
                 }).filter(r => r);

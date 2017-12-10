@@ -55,6 +55,11 @@ body {
 .imageDes {
   text-align: center;
 }
-.descriptionColor {
+.descriptionColor, .comicColor {
   color: #FCF03F;
+}
+.comicsName {
+
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }

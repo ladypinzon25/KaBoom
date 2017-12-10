@@ -12,12 +12,28 @@ class Drawer extends Component {
                 <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
                 <div className="infoCharacter">
                     <div className="name"><b><h1>{this.props.character.name}</h1></b></div>
-                    <div className="imageDes"><img src={this.props.character.img + '/standard_xlarge.' + this.props.character.ext}/></div>
-                    {this.props.character.description?
-                        <div className="description"><b><p><span className="descriptionColor">Description: </span>{this.props.character.description}</p></b></div>
-                    :
-                    ''}
-                    </div>
+                    <div className="imageDes"><img
+                        src={this.props.character.img + '/standard_xlarge.' + this.props.character.ext}/></div>
+                    {this.props.character.description ?
+                        <div className="description"><b><p><span
+                            className="descriptionColor">Description: </span>{this.props.character.description}</p></b>
+                        </div>
+                        :
+                        ''}
+                </div>
+                <div>
+                    {this.props.character && this.props.character.comics && this.props.character.comics.length>0 ?
+                        <div>
+                            <div className="comicColor"><b>Comics:</b></div>
+                            {this.props.character.comics.map((comic, i) => {
+                                return (
+                                    <div key={i} className="comicsName">
+                                        <b> * {comic.name} </b>
+                                    </div>
+                                )
+                            })}</div>
+                        :
+                        ''}</div>
             </div>
         )
     }
