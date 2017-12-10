@@ -6,13 +6,14 @@ import Menu from './Game/Menu.jsx';
 import HowTo from './Game/HowTo.jsx';
 import DeckSelect from './Game/DeckSelect.jsx';
 import Play from './Game/Play.jsx';
-
+import {UsersDB} from '../api/Users.js';
 import roster from '../data/cards.js';
 
 class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: props.user,
       view: "Menu"
     };
   }
@@ -70,25 +71,21 @@ class Game extends Component {
 
   ChangeDeck(deck) {
     var id = this.props.user._id;
-    Meteor.call('users.updateUserDeck',{
-      id,
-      deck
-    }, (error, response) => {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('User deck updated');
-        var u = UserDB.findOne(id);
-        this.setState({
-          user: u,
-          view: "Menu"
-        });
-      }
+    const result = Meteor.call('users.updateUserDeck',{id,deck});
+    console.log('User deck updated');
+    var u = this.state.user;
+    u.deck = deck;
+    this.setState({
+      user: u,
+      view: "Menu"
     });
   }
 
   GameResult(oponent, result) {
-    var id1 = this.props.user._id;
+    this.setState({
+      view: "Menu"
+    });
+    /*var id1 = this.props.user._id;
     var id2 = oponent._id;
     Meteor.call('users.addResult',{
       id1,
@@ -101,10 +98,11 @@ class Game extends Component {
         console.log('User stats updated');
         var u = UserDB.findOne(id);
         this.setState({
+          view: "Menu",
           user: u
         });
       }
-    });
+    });*/
   }
 }
 
