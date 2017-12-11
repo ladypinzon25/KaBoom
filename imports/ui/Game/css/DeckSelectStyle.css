@@ -1,6 +1,114 @@
-.Roster
+#DeckSelectPage
+{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5vh 50vh 35vh 5vh;
+}
+
+#DeckSelectPage .Roster
 {
   display: grid;
-  grid-template-columns: repeat(1fr, 10);
-  grid-template-rows: repeat(1fr, 3);
+  grid-gap: 1em;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#DeckSelectPage .Selection
+{
+  margin-top: 1em;
+  width: 100vw;
+  height: 40vh;
+  display: grid;
+  grid-gap: 1.5em;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+}
+
+#HeroIcon .nameLabel
+{
+  width: 100%;
+  background-color: #E3E3E3;
+  color: #141414;
+  font-family: 'Indie Flower', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#HeroIcon .ImageCrop
+{
+  height: 10vh;
+  width: 7vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#HeroIcon .ImageCrop img
+{
+  max-width: 100px;
+}
+
+#HeroIcon.selected
+{
+  border: 3px solid #0000CE;
+}
+
+#HeroIcon.SS
+{
+  background-color: #20BC00;
+}
+
+#HeroIcon.SP
+{
+  background-color: #2323ea;
+}
+
+#HeroIcon.ST
+{
+  background-color: #E57D00;
+}
+
+#HeroCard
+{
+  height: 32vh;
+  font-family: 'Indie Flower', cursive;
+  font-size: 2em;
+  text-align: center;
+  background-color: #E3E3E3;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr;
+}
+
+#HeroCard button
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#HeroCard .heroImage
+{
+  width: 14vw;
+  overflow: hidden;
+}
+
+#HeroCard .heroClass
+{
+  width: 14vw;
+  overflow: hidden;
+}
+
+#HeroCard .heroImage img
+{
+  max-width: 14vw;
+}
+
+#HeroCard .heroClass img
+{
+  max-height: 100%;
 }

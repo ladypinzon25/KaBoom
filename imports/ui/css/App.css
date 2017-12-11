@@ -35,7 +35,9 @@ body {
   background-color: #fff311;
   margin: 2px;
   cursor: pointer;
+  font-family: 'Indie Flower', cursive;
   color: #141414;
+  text-decoration: none;
 }
 
 .InactiveButton
@@ -44,5 +46,7 @@ body {
   background-color: transparent;
   margin: 2px;
   cursor: default;
+  font-family: 'Indie Flower', cursive;
   color: #141414;
+  text-decoration: none;
 }

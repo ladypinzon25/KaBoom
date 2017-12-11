@@ -80,7 +80,9 @@ class Play extends Component {
           {this.ShowDeck("P1")}
         </div>
         {this.ShowCard("P1")}
-        <div className="WinIcon"></div>
+        <div className="WinIcon">
+          {this.SelectIcon()}
+        </div>
         {this.CreateButton()}
         <div className="deckP2">
           {this.ShowDeck("P2")}
@@ -138,11 +140,38 @@ class Play extends Component {
           <div className="nameLabel">
             {card.name}
           </div>
-          <div className="heroImage"></div>
-          <div className="heroCategory">
-            {card.category}
+          <div className="heroImage">
+            <img src={"./heroImg/"+card.serial+".jpg"} alt={card.name+"'s image"}/>
+          </div>
+          <div className="heroClass">
+            {this.GetCategory(card.serial)}
           </div>
         </div>
+      );
+    }
+  }
+
+  SelectIcon() {
+    if (this.state.phase === 1) {
+      var r = this.state.p1Moves[this.state.turn];
+      return (
+        <img src={"./icons/"+r+".svg"} alt=""/>
+      );
+    }
+  }
+  
+  GetCategory(serial) {
+    if (serial.includes("SS")) {
+      return (
+        <img src="./icons/SS.svg" alt="Super strength icon"/>
+      );
+    } else if (serial.includes("SP")) {
+      return (
+        <img src="./icons/SP.svg" alt="Super powers icon"/>
+      );
+    } else {
+      return (
+        <img src="./icons/ST.svg" alt="Skill and tech icon"/>
       );
     }
   }

@@ -12,13 +12,29 @@ class HeroCard extends Component {
           {this.props.hero.name}
         </div>
         <div className="heroImage">
-
+          <img src={"./heroImg/"+this.props.hero.serial+".jpg"} alt={this.props.hero.name+"'s image"}/>
         </div>
         <div className="heroClass">
-          {this.props.hero.category}
+          {this.GetCategory()}
         </div>
       </div>
     );
+  }
+
+  GetCategory() {
+    if (this.props.hero.serial.includes("SS")) {
+      return (
+        <img src="./icons/SS.svg" alt="Super strength icon"/>
+      );
+    } else if (this.props.hero.serial.includes("SP")) {
+      return (
+        <img src="./icons/SP.svg" alt="Super powers icon"/>
+      );
+    } else {
+      return (
+        <img src="./icons/ST.svg" alt="Skill and tech icon"/>
+      );
+    }
   }
 }
 

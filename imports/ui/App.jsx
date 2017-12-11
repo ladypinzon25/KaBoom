@@ -76,7 +76,7 @@ class App extends Component {
           },
           {
             email: "@.com",
-            name: "Esteban",
+            name: "Jorge",
             deck: ["03-ST03", "08-ST06", "13-SS04", "18-SS06", "23-SP06"],
             stats: {
               wins: 0,

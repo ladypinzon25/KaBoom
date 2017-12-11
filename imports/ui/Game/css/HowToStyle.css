@@ -1,0 +1,16 @@
+#HowToPage
+{
+  color: #E3E3E3;
+}
+
+#HowToPage .ImgCont
+{
+  position: relative;
+}
+
+#HowToPage img
+{
+  position: relative;
+  left: 35vw;
+  max-width: 30vw;
+}

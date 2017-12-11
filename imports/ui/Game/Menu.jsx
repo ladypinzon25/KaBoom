@@ -6,14 +6,15 @@ import './css/MenuStyle.css';
 class Menu extends Component {
   render() {
     return (
-      <div id="MenuScreen" onClick={this.props.playable?() => this.ChangePage("Game"):() => {return;}}>
-        <button className={"PlayButton"+(this.props.playable?" ActiveButton":" InactiveButton")}>
+      <div id="MenuScreen">
+        <button className={"MenuButton PlayButton"+(this.props.playable?" ActiveButton":" InactiveButton")}
+          onClick={this.props.playable?() => this.ChangePage("Game"):() => {return;}}>
           Play!
         </button>
-        <button className="DeckButton ActiveButton" onClick={() => this.ChangePage("DeckSelect")}>
+        <button className="MenuButton DeckButton ActiveButton" onClick={() => this.ChangePage("DeckSelect")}>
           Choose Your Team
         </button>
-        <button className="tutorialButton ActiveButton" onClick={() => this.ChangePage("HowTo")}>
+        <button className="MenuButton tutorialButton ActiveButton" onClick={() => this.ChangePage("HowTo")}>
           How To Play
         </button>
       </div>

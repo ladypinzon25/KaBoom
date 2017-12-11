@@ -14,6 +14,7 @@
 
 #PlayPage .Header .label
 {
+  font-size: 2em;
   text-align: center;
   color: #CCC;
   padding-top: 10px;
@@ -88,7 +89,7 @@
 #PlayPage .Board
 {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+  grid-template-columns: 1.5fr 1.5fr 2fr 1.5fr 1.5fr;
   grid-template-rows: 1fr 2fr 1fr 1fr;
   grid-template-areas: "deckP1 deckP1 . deckP2 deckP2"
   ". cardP1 image cardP2 ."
@@ -168,6 +169,7 @@
 
 .playingCard
 {
+  position: relative;
   width: 100%;
   height: 100%;
   border: 1px solid #141414;
@@ -176,6 +178,51 @@
 .playingCard.back
 {
   background-color: #333;
+}
+
+.playingCard.front
+{
+  background-color: #E3E3E3;
+}
+
+.playingCard .nameLabel
+{
+  width: 100%;
+  background-color: #141414;
+  color: #E3E3E3;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.playingCard .heroImage
+{
+  position: absolute;
+  left: 5%;
+  top: 15%;
+  width: 90%;
+  height: 40%;
+  border: 2px solid #141414;
+  overflow: hidden;
+}
+
+.playingCard .heroImage img
+{
+  max-width: 100%;
+}
+
+.playingCard .heroClass
+{
+  position: absolute;
+  top: 60%;
+  width: 100%;
+}
+
+.playingCard .heroClass img
+{
+  position: absolute;
+  left: 5%;
+  max-width: 90%;
 }
 
 .EndCard
@@ -192,4 +239,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
